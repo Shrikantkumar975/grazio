@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --zenith-bg: #F9FAFB;
+        --zenith-sidebar: #FFFFFF;
+        --zenith-text: #111827;
+        --zenith-text-light: #6B7280;
+        --zenith-card: #FFFFFF;
+        --zenith-border: #F3F4F6;
+        --zenith-primary: #3B82F6;
+        --zenith-orange: #F97316;
+        --zenith-teal: #14B8A6;
+        --zenith-blue: #3B82F6;
+        --zenith-yellow: #F59E0B;
+        --zenith-hover: #F3F4F6;
+    }
+
+    .dark {
+        --zenith-bg: #0F172A;
+        --zenith-sidebar: #1E293B;
+        --zenith-text: #F8FAFC;
+        --zenith-text-light: #94A3B8;
+        --zenith-card: #1E293B;
+        --zenith-border: #334155;
+        --zenith-primary: #3B82F6;
+        --zenith-hover: #334155;
+        --zenith-orange: #FB923C;
+        --zenith-teal: #2DD4BF;
+        --zenith-blue: #60A5FA;
+        --zenith-yellow: #FBBF24;
+    }
+
+    body {
+        @apply font-sans text-zenith-text bg-zenith-bg antialiased transition-colors duration-200;
+    }
+}
+
+@layer utilities {
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #E5E7EB;
+        border-radius: 10px;
+    }
+    
+    .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+        background-color: #D1D5DB;
+    }
+}
