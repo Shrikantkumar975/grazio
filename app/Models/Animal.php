@@ -16,7 +16,11 @@ class Animal extends Model
     public $incrementing = false;
     protected $keyType = 'int';
 
-    protected $fillable = ['user_id', 'name', 'type', 'age', 'status'];
+    protected $fillable = [
+        'user_id', 'name', 'type', 'age', 'status',
+        'breed', 'weight', 'gender', 'color', 'tag_number', 'notes',
+        'farm_lat', 'farm_lng',
+    ];
 
     public function gpsLogs()
     {

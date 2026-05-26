@@ -51,6 +51,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('geofences.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('geofences.*') ? 'bg-zenith-hover text-zenith-text' : 'text-zenith-textLight hover:bg-zenith-hover hover:text-zenith-text' }}">
+                            <i class="material-icons text-[20px]">fence</i>
+                            Geofences
+                            @php
+                                $alertCount = \App\Models\GeofenceAlert::where('user_id', auth()->id())->where('resolved', false)->count();
+                            @endphp
+                            @if($alertCount > 0)
+                                <span class="ml-auto px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full">{{ $alertCount }}</span>
+                            @endif
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('messages.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('messages.*') ? 'bg-zenith-hover text-zenith-text' : 'text-zenith-textLight hover:bg-zenith-hover hover:text-zenith-text' }}">
                             <i class="material-icons text-[20px]">chat</i>
                             Messages
